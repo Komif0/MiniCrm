@@ -61,11 +61,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\ConsoleApp18\\ConsoleApp18\\ConsoleApp18.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\Proj\\ConsoleApp18\\ConsoleApp18.csproj",
       "projectName": "ConsoleApp18",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\ConsoleApp18\\ConsoleApp18\\ConsoleApp18.csproj",
+      "projectPath": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\Proj\\ConsoleApp18\\ConsoleApp18.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\ConsoleApp18\\ConsoleApp18\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\Proj\\ConsoleApp18\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

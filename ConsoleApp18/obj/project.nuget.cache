@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pmno5FrxVTE=",
+  "dgSpecHash": "pz/1/p0PAF0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\ConsoleApp18\\ConsoleApp18\\ConsoleApp18.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\Proj\\ConsoleApp18\\ConsoleApp18.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
   ],

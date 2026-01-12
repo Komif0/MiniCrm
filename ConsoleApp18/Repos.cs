@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using static Program.Program;
 
-public class BaseRepository<T>
+public abstract class BaseRepository<T>
 {
     protected List<T> _items;
     protected readonly string _filePath;
@@ -54,4 +54,30 @@ public class ClientRepository : BaseRepository<Client>
     {
         return _items.Cast<Client>().FirstOrDefault(c => c.id == id);
     }
+}
+
+
+public class OrderRepository : BaseRepository<Order> 
+{
+    public OrderRepository(string filePath) : base(filePath)
+    {
+        if (_items.Any())
+        {
+            _nextId = _items.Cast<Order>().Max(o => o.id) + 1;
+        }
+    }
+
+
+    public Order Add(int Id, int ClientId, string? Description, decimal Amount, DateOnly DueDate)
+    {
+        var order = new Order(Id, ClientId, Description, Amount, DueDate);
+        _items.Add(order);
+        return order;
+    }
+
+    
+    public List<Order> GetOrdersByClientId(int clientId) 
+    {
+        return _items.Cast<Order>().Where(o => o.ClientId == clientId).ToList();
+    } 
 }
