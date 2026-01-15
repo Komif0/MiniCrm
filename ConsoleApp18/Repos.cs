@@ -1,6 +1,8 @@
 using Newtonsoft.Json;
 using static Program.Program;
 
+public record Client(string name, string eMail, int id, DateTime CreatedAt);
+public record Order(int id, int ClientId, string? Description, decimal Amount, DateOnly DueDate);
 public abstract class BaseRepository<T>
 {
     protected List<T> _items;
@@ -53,6 +55,11 @@ public class ClientRepository : BaseRepository<Client>
     public Client? GetById(int id)
     {
         return _items.Cast<Client>().FirstOrDefault(c => c.id == id);
+    }
+
+    public List<Client> GetAll() 
+    {
+        return _items;
     }
 }
 
