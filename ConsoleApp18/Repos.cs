@@ -7,16 +7,18 @@ public interface IRepository<T> where T : class
     T? GetById(int id);
     void Add(T entity);
     Task SaveAsync();
+
+    int GetNextId() { return 0; }
 }
 
 public interface IClientRepository : IRepository<Client>
 {
-    // РџРѕРєР° Р·РґРµСЃСЊ РїСѓСЃС‚Рѕ, РЅРѕ РІ Р±СѓРґСѓС‰РµРј РјРѕР¶РµС‚ РїРѕСЏРІРёС‚СЊСЃСЏ РјРµС‚РѕРґ, РЅР°РїСЂРёРјРµСЂ, FindByName(string name)
+    // Пока здесь пусто, но в будущем может появиться метод, например, FindByName(string name)
 }
 
 public interface IOrderRepository : IRepository<Order>
 {
-    // Р—РґРµСЃСЊ РјРѕР¶РµС‚ РїРѕСЏРІРёС‚СЊСЃСЏ, РЅР°РїСЂРёРјРµСЂ, IEnumerable<Order> GetByClientId(int clientId)
+    // Здесь может появиться, например, IEnumerable<Order> GetByClientId(int clientId)
 }
 
 
@@ -42,7 +44,6 @@ public abstract class BaseRepository<T> : IRepository<T> where T : class
             _items = JsonConvert.DeserializeObject<List<T>>(json) ?? new List<T>();
         }
     }
-
     public void Add(T entity) => _items.Add(entity);
     public IEnumerable<T> GetAll() => _items;
     public abstract T GetById(int id);
@@ -60,6 +61,14 @@ public class ClientRepository : BaseRepository<Client>, IClientRepository
     {
         return _items.FirstOrDefault(c => c.Id == id);
     }
+
+    public int GetNextId()
+    {
+        var lastCl = _items.Cast<Client>().Last();
+        var nextId = lastCl.Id + 1;
+        return nextId;
+    }
+
 }
 
 public class OrderRepository : BaseRepository<Order>, IOrderRepository
@@ -68,5 +77,13 @@ public class OrderRepository : BaseRepository<Order>, IOrderRepository
     public override Order GetById(int id)
     {
         return _items.FirstOrDefault(o => o.Id == id);
+    }
+
+    public int GetNextId()
+    {
+        var lastOrd = _items.Cast<Order>().Last();
+
+        var nextId = lastOrd.Id + 1; 
+        return nextId;
     }
 }

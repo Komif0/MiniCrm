@@ -1,4 +1,4 @@
-using Microsoft.VisualBasic;
+﻿using Microsoft.VisualBasic;
 using Services;
 using System;
 using System.IO;
@@ -12,18 +12,29 @@ namespace Program
     {
         public static async Task Main(string[] args)
         {
-            Console.WriteLine("--- Демонстрация работы сервисного слоя ---");
+            // 1. Получаем экземпляр нашего сервиса-одиночки
+            var crmService = CrmService.Instance;
 
-            var newClient = new Client(3, "Ольга Иванова", "olga@test.com", DateTime.Now);
-            CrmService.Instance.AddClient(newClient);
+            // 2. Создаем экземпляр подписчика
+            var notifier = new Notifier();
 
-            Console.WriteLine("\nВсе клиенты в системе:");
-            var allClients = CrmService.Instance.GetAllClients();
-            foreach (var client in allClients)
-            {
-                Console.WriteLine(client);
-            }
+            // 3. Подписываем его метод OnClientAdded на событие ClientAdded
+            crmService.ClientAdded += notifier.OnClientAdded;
 
+            // 4. Имитируем работу приложения для проверки
+            Console.WriteLine("--- Система CRM запущена ---");
+            Console.WriteLine("Добавляем клиента...");
+            crmService.AddClient("Иван Иванов", "ivan@example.com");
+
+            Console.ReadLine();
+
+            // 3. Подписываем его метод OnClientAdded на событие ClientAdded
+            crmService.ClientAdded -= notifier.OnClientAdded;
+
+            Console.WriteLine("--- Система CRM запущена ---");
+            Console.WriteLine("Добавляем клиента...");
+            crmService.AddClient("Иван Иванов", "ivan@example.com");
         }
+
     }
 }
