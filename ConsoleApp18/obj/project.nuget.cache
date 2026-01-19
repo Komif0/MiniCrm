@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "pz/1/p0PAF0=",
+  "dgSpecHash": "NPt9Vupv4rw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\Proj\\ConsoleApp18\\ConsoleApp18.csproj",
+  "projectFilePath": "C:\\Users\\Komifo\\Desktop\\miniCrm\\MiniCrm\\ConsoleApp18\\ConsoleApp18.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
+    "C:\\Users\\Komifo\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
   ],
   "logs": []
 }

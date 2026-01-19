@@ -1,8 +1,9 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
+using Services;
+using System;
+using System.IO;
 using System.Net;
 using System.Reflection.PortableExecutable;
-using System.IO;
-using Services;
 using System.Threading.Tasks;
 
 namespace Program
@@ -11,18 +12,17 @@ namespace Program
     {
         public static async Task Main(string[] args)
         {
-            Console.WriteLine("============Программа запущена============");
-            var crmServ = CrmService.Instance;
+            Console.WriteLine("--- Демонстрация работы сервисного слоя ---");
 
-            Console.WriteLine("Добавил клиента");
-            var clientsList = crmServ.GetAllClients();
-            foreach (var client in clientsList) { Console.WriteLine($"Имя: {client.name} ID:{client.id}");  }
+            var newClient = new Client(3, "Ольга Иванова", "olga@test.com", DateTime.Now);
+            CrmService.Instance.AddClient(newClient);
 
-            await crmServ.AddClientAsync("Шайтан", "shaitan@gma.com");
-
-            Console.WriteLine("Вывел клиента на экран");
-            clientsList = crmServ.GetAllClients();
-            foreach (var client in clientsList) { Console.WriteLine($"Имя: {client.name} ID:{client.id}"); }
+            Console.WriteLine("\nВсе клиенты в системе:");
+            var allClients = CrmService.Instance.GetAllClients();
+            foreach (var client in allClients)
+            {
+                Console.WriteLine(client);
+            }
 
         }
     }

@@ -1,13 +1,31 @@
 using Newtonsoft.Json;
 using static Program.Program;
 
-public record Client(string name, string eMail, int id, DateTime CreatedAt);
-public record Order(int id, int ClientId, string? Description, decimal Amount, DateOnly DueDate);
-public abstract class BaseRepository<T>
+public interface IRepository<T> where T : class
 {
-    protected List<T> _items;
+    IEnumerable<T> GetAll();
+    T? GetById(int id);
+    void Add(T entity);
+    Task SaveAsync();
+}
+
+public interface IClientRepository : IRepository<Client>
+{
+    // РџРѕРєР° Р·РґРµСЃСЊ РїСѓСЃС‚Рѕ, РЅРѕ РІ Р±СѓРґСѓС‰РµРј РјРѕР¶РµС‚ РїРѕСЏРІРёС‚СЊСЃСЏ РјРµС‚РѕРґ, РЅР°РїСЂРёРјРµСЂ, FindByName(string name)
+}
+
+public interface IOrderRepository : IRepository<Order>
+{
+    // Р—РґРµСЃСЊ РјРѕР¶РµС‚ РїРѕСЏРІРёС‚СЊСЃСЏ, РЅР°РїСЂРёРјРµСЂ, IEnumerable<Order> GetByClientId(int clientId)
+}
+
+
+public record Client(int Id, string Name, string Email, DateTime CreatedAt);
+public record Order(int Id, int ClientId, string? Description, decimal Amount, DateOnly DueDate);
+public abstract class BaseRepository<T> : IRepository<T> where T : class
+{
     protected readonly string _filePath;
-    protected int _nextId = 1;
+    protected List<T> _items;
 
     protected BaseRepository(string filePath)
     {
@@ -15,76 +33,40 @@ public abstract class BaseRepository<T>
         _items = new List<T>();
         Load();
     }
-    public virtual async Task SaveAsync()
-    {
-        string json = JsonConvert.SerializeObject(_items,
-            Newtonsoft.Json.Formatting.Indented);
 
-        await File.WriteAllTextAsync(_filePath, json);
-    }
-
-    public List<T> GetAll() => _items;
-      
     private void Load()
     {
-        if (!File.Exists(_filePath)) return;
-        string json = File.ReadAllText(_filePath);
-        // Мы пока не можем быть уверены, что T - это ссылочный тип, поэтому проверка на null важна
-        _items = JsonConvert.DeserializeObject<List<T>>(json) ?? new List<T>();
-    }
-
-}
-
-public class ClientRepository : BaseRepository<Client>
-{
-    public ClientRepository(string filePath) : base (filePath)
-    {
-        if (_items.Any())
+        if (File.Exists(_filePath))
         {
-            _nextId = _items.Cast<Client>().Max(c => c.id) + 1;
+            var json = File.ReadAllText(_filePath);
+            _items = JsonConvert.DeserializeObject<List<T>>(json) ?? new List<T>();
         }
     }
 
-    public Client Add(string name, string email)
+    public void Add(T entity) => _items.Add(entity);
+    public IEnumerable<T> GetAll() => _items;
+    public abstract T GetById(int id);
+    public async Task SaveAsync()
     {
-        var client = new Client(name, email, _nextId++, DateTime.Now);
-        _items.Add(client);
-        return client;
-    }
-
-    public Client? GetById(int id)
-    {
-        return _items.Cast<Client>().FirstOrDefault(c => c.id == id);
-    }
-
-    public List<Client> GetAll() 
-    {
-        return _items;
+        var json = JsonConvert.SerializeObject(_items, Newtonsoft.Json.Formatting.Indented);
+        await File.WriteAllTextAsync(_filePath, json);
     }
 }
 
-
-public class OrderRepository : BaseRepository<Order> 
+public class ClientRepository : BaseRepository<Client>, IClientRepository
 {
-    public OrderRepository(string filePath) : base(filePath)
+    public ClientRepository(string filePath) : base(filePath) { }
+    public override Client GetById(int id)
     {
-        if (_items.Any())
-        {
-            _nextId = _items.Cast<Order>().Max(o => o.id) + 1;
-        }
+        return _items.FirstOrDefault(c => c.Id == id);
     }
+}
 
-
-    public Order Add(int Id, int ClientId, string? Description, decimal Amount, DateOnly DueDate)
+public class OrderRepository : BaseRepository<Order>, IOrderRepository
+{
+    public OrderRepository(string filePath) : base(filePath) { }
+    public override Order GetById(int id)
     {
-        var order = new Order(Id, ClientId, Description, Amount, DueDate);
-        _items.Add(order);
-        return order;
+        return _items.FirstOrDefault(o => o.Id == id);
     }
-
-    
-    public List<Order> GetOrdersByClientId(int clientId) 
-    {
-        return _items.Cast<Order>().Where(o => o.ClientId == clientId).ToList();
-    } 
 }

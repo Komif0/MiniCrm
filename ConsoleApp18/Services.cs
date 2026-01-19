@@ -1,40 +1,34 @@
 using static Program.Program;
 
-namespace Services 
+namespace Services
 {
-    public sealed class CrmService 
+    public sealed class CrmService
     {
-        private static readonly CrmService _instance = new CrmService();
-        private readonly ClientRepository _clientRepository;
-        private readonly OrderRepository _orderRepository;
+        private readonly IClientRepository _clientRepository;
+        private readonly IOrderRepository _orderRepository;
 
-
-        private CrmService()
+        private static readonly Lazy<CrmService> lazy = new Lazy<CrmService>(() =>
         {
-            Console.WriteLine("Экземпляр CrmService создан.");
-            _clientRepository = new ClientRepository("clients.json");
-            _orderRepository = new OrderRepository("orders.json");
+            var clientRepo = new ClientRepository("clients.json");
+            var orderRepo = new OrderRepository("orders.json");
+            return new CrmService(clientRepo, orderRepo);
+        });
+
+        public static CrmService Instance => lazy.Value;
+
+        private CrmService(IClientRepository clientRepository, IOrderRepository orderRepository)
+        {
+            _clientRepository = clientRepository;
+            _orderRepository = orderRepository;
         }
 
-        public static CrmService Instance => _instance;
-
-        public async Task AddClientAsync(string name, string email) 
+        public void AddClient(Client client)
         {
-            _clientRepository.Add(name, email);
-            await _clientRepository.SaveAsync();
-            Console.WriteLine($"Клиент '{name}' успешно добавлен.");
+            _clientRepository.Add(client);
+            _clientRepository.SaveAsync().Wait(); // .Wait() РґР»СЏ РїСЂРѕСЃС‚РѕС‚С‹ РІ РєРѕРЅСЃРѕР»СЊРЅРѕРј РїСЂРёР»РѕР¶РµРЅРёРё
         }
 
-        public List<Order> GetClientOrders(int clientId)
-        {
-            return _orderRepository.GetOrdersByClientId(clientId);
-        }
-
-        public List<Client> GetAllClients() 
-        {
-            return _clientRepository.GetAll(); 
-        }
-
+        public IEnumerable<Client> GetAllClients() => _clientRepository.GetAll();
     }
 
 }
