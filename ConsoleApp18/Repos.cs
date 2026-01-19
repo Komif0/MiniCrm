@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+п»їusing Newtonsoft.Json;
 using static Program.Program;
 
 public interface IRepository<T> where T : class
@@ -13,12 +13,12 @@ public interface IRepository<T> where T : class
 
 public interface IClientRepository : IRepository<Client>
 {
-    // Пока здесь пусто, но в будущем может появиться метод, например, FindByName(string name)
+    // РџРѕРєР° Р·РґРµСЃСЊ РїСѓСЃС‚Рѕ, РЅРѕ РІ Р±СѓРґСѓС‰РµРј РјРѕР¶РµС‚ РїРѕСЏРІРёС‚СЊСЃСЏ РјРµС‚РѕРґ, РЅР°РїСЂРёРјРµСЂ, FindByName(string name)
 }
 
 public interface IOrderRepository : IRepository<Order>
 {
-    // Здесь может появиться, например, IEnumerable<Order> GetByClientId(int clientId)
+    // Р—РґРµСЃСЊ РјРѕР¶РµС‚ РїРѕСЏРІРёС‚СЊСЃСЏ, РЅР°РїСЂРёРјРµСЂ, IEnumerable<Order> GetByClientId(int clientId)
 }
 
 

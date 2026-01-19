@@ -1,4 +1,4 @@
-using static Program.Program;
+п»їusing static Program.Program;
 
 namespace Services
 {
@@ -7,7 +7,7 @@ namespace Services
         public void OnClientAdded(Client client)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"[Уведомление]: Добавлен новый клиент '{client.Name}' с Email: {client.Email}");
+            Console.WriteLine($"[РЈРІРµРґРѕРјР»РµРЅРёРµ]: Р”РѕР±Р°РІР»РµРЅ РЅРѕРІС‹Р№ РєР»РёРµРЅС‚ '{client.Name}' СЃ Email: {client.Email}");
             Console.ResetColor();
         }
     }
@@ -43,8 +43,8 @@ namespace Services
             _clientRepository.Add(client);
             _clientRepository.SaveAsync();
 
-            // 2. Генерируем (вызываем) событие, уведомляя всех подписчиков.
-            // Передаем в качестве аргумента только что созданного клиента.
+            // 2. Р“РµРЅРµСЂРёСЂСѓРµРј (РІС‹Р·С‹РІР°РµРј) СЃРѕР±С‹С‚РёРµ, СѓРІРµРґРѕРјР»СЏСЏ РІСЃРµС… РїРѕРґРїРёСЃС‡РёРєРѕРІ.
+            // РџРµСЂРµРґР°РµРј РІ РєР°С‡РµСЃС‚РІРµ Р°СЂРіСѓРјРµРЅС‚Р° С‚РѕР»СЊРєРѕ С‡С‚Рѕ СЃРѕР·РґР°РЅРЅРѕРіРѕ РєР»РёРµРЅС‚Р°.
             ClientAdded?.Invoke(client);
 
             return client;
