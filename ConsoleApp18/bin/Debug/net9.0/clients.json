@@ -82,5 +82,23 @@
     "Name": "Петр Сидоров",
     "Email": "petr@example.com",
     "CreatedAt": "2026-01-22T17:40:49.534525+03:00"
+  },
+  {
+    "Id": 14,
+    "Name": "Иван Иванов",
+    "Email": "ivan@example.com",
+    "CreatedAt": "2026-01-22T18:35:00.8045356+03:00"
+  },
+  {
+    "Id": 15,
+    "Name": "Мария Петрова",
+    "Email": "maria@example.com",
+    "CreatedAt": "2026-01-22T18:35:00.8609752+03:00"
+  },
+  {
+    "Id": 16,
+    "Name": "Петр Сидоров",
+    "Email": "petr@example.com",
+    "CreatedAt": "2026-01-22T18:35:00.8861976+03:00"
   }
 ]

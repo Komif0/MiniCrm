@@ -29,15 +29,27 @@
             _crmService.AddClient("Петр Сидоров", "petr@example.com");
 
 
-            var emailStrategy = new SearchClientsByEmailStrategy("@example.com");
-            var foundByEmail = _crmService.FindClients(emailStrategy);
-            Console.WriteLine("\nНайдены клиенты с почтой на домене '@example.com':");
-            foreach (var client in foundByEmail)
-            {
-                Console.WriteLine(client);
-            }
+        Console.WriteLine("\n--- Демонстрация паттерна Стратегия ---");
 
-            Console.ReadLine();
-
+        // 1. Создаем стратегию для поиска по имени "Иван"
+        var nameStrategy = new SearchClientsByNameStrategy("Иван");
+        var foundByName = _crmService.FindClients(nameStrategy);
+        Console.WriteLine("\nНайдены клиенты по имени 'Иван':");
+        foreach (var client in foundByName)
+        {
+            Console.WriteLine(client);
         }
+
+        // 2. Создаем стратегию для поиска по email-домену "@example.com"
+        var emailStrategy = new SearchClientsByEmailStrategy("@example.com");
+        var foundByEmail = _crmService.FindClients(emailStrategy);
+        Console.WriteLine("\nНайдены клиенты с почтой на домене '@example.com':");
+        foreach (var client in foundByEmail)
+        {
+            Console.WriteLine(client);
+        }
+
+        Console.ReadLine();
+
+    }
     }
