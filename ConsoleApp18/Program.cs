@@ -15,6 +15,10 @@ namespace Program
             var crmService = CrmService.Instance;
             var notifier = new Notifier();
             var ui = new ConsoleUI(crmService);
+
+            crmService.ClientAdded += notifier.OnClientAdded;
+
+            ui.Run();
         }
 
     }

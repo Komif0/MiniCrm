@@ -24,8 +24,15 @@ namespace Services
 
         private static readonly Lazy<CrmService> lazy = new Lazy<CrmService>(() =>
         {
-            var clientRepo = new ClientRepository("clients.json");
-            var orderRepo = new OrderRepository("orders.json");
+            // 1. Создаем "специалистов" по хранению
+            var clientStorage = new JsonFileStorage<Client>("clients.json");
+            var orderStorage = new JsonFileStorage<Order>("orders.json");
+
+            // 2. Создаем репозитории, передавая им зависимости хранения
+            var clientRepo = new ClientRepository(clientStorage);
+            var orderRepo = new OrderRepository(orderStorage);
+
+            // 3. Создаем сервис, передавая ему репозитории
             return new CrmService(clientRepo, orderRepo);
         });
 
