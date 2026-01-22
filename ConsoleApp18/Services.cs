@@ -95,6 +95,7 @@ namespace Services
             return _clientRepository.GetAll().Where(client => strategy.IsMatch(client));
         }
 
+        public IEnumerable<Order> GetAllOrders() => _orderRepository.GetAll();
     }
 
 }

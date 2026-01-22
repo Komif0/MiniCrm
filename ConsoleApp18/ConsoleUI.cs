@@ -49,6 +49,19 @@
             Console.WriteLine(client);
         }
 
+        Console.WriteLine("\n\n--- Демонстрация паттерна Шаблонный метод ---");
+
+        // 1. Создаем и запускаем простой отчет
+        BaseReportGenerator clientReport = new ClientListReport(_crmService);
+        Console.WriteLine("\n--- Генерация простого отчета по клиентам ---");
+        clientReport.Generate();
+
+        // 2. Создаем и запускаем сложный отчет
+        BaseReportGenerator ordersReport = new ClientOrdersReport(_crmService);
+        Console.WriteLine("\n\n--- Генерация детального отчета по заказам ---");
+        ordersReport.Generate();
+
+
         Console.ReadLine();
 
     }
