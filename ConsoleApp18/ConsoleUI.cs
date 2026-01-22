@@ -28,6 +28,16 @@
             Console.WriteLine("\nДобавляем третьего клиента...");
             _crmService.AddClient("Петр Сидоров", "petr@example.com");
 
+
+            var emailStrategy = new SearchClientsByEmailStrategy("@example.com");
+            var foundByEmail = _crmService.FindClients(emailStrategy);
+            Console.WriteLine("\nНайдены клиенты с почтой на домене '@example.com':");
+            foreach (var client in foundByEmail)
+            {
+                Console.WriteLine(client);
+            }
+
             Console.ReadLine();
+
         }
     }

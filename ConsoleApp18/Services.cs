@@ -2,6 +2,37 @@
 
 namespace Services
 {
+    public class SearchClientsByEmailStrategy : IClientSearchStrategy
+    {
+        private readonly string _emailDomain;
+
+        public SearchClientsByEmailStrategy(string emailDomain)
+        {
+            _emailDomain = emailDomain.ToLower();
+        }
+
+        public bool IsMatch(Client client)
+        {
+            return client.Email.ToLower().EndsWith(_emailDomain);
+        }
+    }
+
+    public class SearchClientsByNameStrategy : IClientSearchStrategy
+    {
+        private readonly string _name;
+
+        public SearchClientsByNameStrategy(string name)
+        {
+            _name = name.ToLower();
+        }
+
+        public bool IsMatch(Client client)
+        {
+            return client.Name.ToLower().Contains(_name);
+        }
+    }
+
+
     public class Notifier
     {
         public void OnClientAdded(Client client)
@@ -58,6 +89,12 @@ namespace Services
         }
 
         public IEnumerable<Client> GetAllClients() => _clientRepository.GetAll();
+
+        public IEnumerable<Client> FindClients(IClientSearchStrategy strategy)
+        {
+            return _clientRepository.GetAll().Where(client => strategy.IsMatch(client));
+        }
+
     }
 
 }
