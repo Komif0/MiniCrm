@@ -1,4 +1,4 @@
-public interface IRepository<T> where T : class
+п»їpublic interface IRepository<T> where T : class
 {
     IEnumerable<T> GetAll();
     T? GetById(int id);
@@ -10,12 +10,12 @@ public interface IRepository<T> where T : class
 
 public interface IClientRepository : IRepository<Client>
 {
-    // Пока здесь пусто, но в будущем может появиться метод, например, FindByName(string name)
+    // РџРѕРєР° Р·РґРµСЃСЊ РїСѓСЃС‚Рѕ, РЅРѕ РІ Р±СѓРґСѓС‰РµРј РјРѕР¶РµС‚ РїРѕСЏРІРёС‚СЊСЃСЏ РјРµС‚РѕРґ, РЅР°РїСЂРёРјРµСЂ, FindByName(string name)
 }
 
 public interface IOrderRepository : IRepository<Order>
 {
-    // Здесь может появиться, например, IEnumerable<Order> GetByClientId(int clientId)
+    // Р—РґРµСЃСЊ РјРѕР¶РµС‚ РїРѕСЏРІРёС‚СЊСЃСЏ, РЅР°РїСЂРёРјРµСЂ, IEnumerable<Order> GetByClientId(int clientId)
 }
 
 public interface IStorage<T>
