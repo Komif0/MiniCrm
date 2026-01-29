@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\proj\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{758CE168-4E55-4A1F-BBF7-57BFA31F18CF}|ConsoleApp18\\ConsoleApp18.csproj|c:\\users\\admin\\source\\repos\\minicrm\\proj\\consoleapp18\\consoleui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{758CE168-4E55-4A1F-BBF7-57BFA31F18CF}|ConsoleApp18\\ConsoleApp18.csproj|solutionrelative:consoleapp18\\consoleui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{758CE168-4E55-4A1F-BBF7-57BFA31F18CF}|ConsoleApp18\\ConsoleApp18.csproj|c:\\users\\admin\\source\\repos\\minicrm\\proj\\consoleapp18\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{758CE168-4E55-4A1F-BBF7-57BFA31F18CF}|ConsoleApp18\\ConsoleApp18.csproj|solutionrelative:consoleapp18\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{758CE168-4E55-4A1F-BBF7-57BFA31F18CF}|ConsoleApp18\\ConsoleApp18.csproj|c:\\users\\admin\\source\\repos\\minicrm\\proj\\consoleapp18\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{758CE168-4E55-4A1F-BBF7-57BFA31F18CF}|ConsoleApp18\\ConsoleApp18.csproj|solutionrelative:consoleapp18\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{758CE168-4E55-4A1F-BBF7-57BFA31F18CF}|ConsoleApp18\\ConsoleApp18.csproj|c:\\users\\admin\\source\\repos\\minicrm\\proj\\consoleapp18\\repos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{758CE168-4E55-4A1F-BBF7-57BFA31F18CF}|ConsoleApp18\\ConsoleApp18.csproj|solutionrelative:consoleapp18\\repos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{758CE168-4E55-4A1F-BBF7-57BFA31F18CF}|ConsoleApp18\\ConsoleApp18.csproj|c:\\users\\admin\\source\\repos\\minicrm\\proj\\consoleapp18\\consoleui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{758CE168-4E55-4A1F-BBF7-57BFA31F18CF}|ConsoleApp18\\ConsoleApp18.csproj|solutionrelative:consoleapp18\\consoleui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{758CE168-4E55-4A1F-BBF7-57BFA31F18CF}|ConsoleApp18\\ConsoleApp18.csproj|c:\\users\\admin\\source\\repos\\minicrm\\proj\\consoleapp18\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{758CE168-4E55-4A1F-BBF7-57BFA31F18CF}|ConsoleApp18\\ConsoleApp18.csproj|solutionrelative:consoleapp18\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{758CE168-4E55-4A1F-BBF7-57BFA31F18CF}|ConsoleApp18\\ConsoleApp18.csproj|c:\\users\\admin\\source\\repos\\minicrm\\proj\\consoleapp18\\interfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\proj\\ConsoleApp18\\Class1.cs",
               "RelativeDocumentMoniker": "ConsoleApp18\\Class1.cs",
@@ -61,7 +61,7 @@
               "RelativeDocumentMoniker": "ConsoleApp18\\Interfaces.cs",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\proj\\ConsoleApp18\\Interfaces.cs",
               "RelativeToolTip": "ConsoleApp18\\Interfaces.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwB0AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-22T14:44:04.815Z",
               "EditorCaption": ""
@@ -80,13 +80,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ConsoleUI.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\proj\\ConsoleApp18\\ConsoleUI.cs",
               "RelativeDocumentMoniker": "ConsoleApp18\\ConsoleUI.cs",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\proj\\ConsoleApp18\\ConsoleUI.cs",
               "RelativeToolTip": "ConsoleApp18\\ConsoleUI.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAowAoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-22T13:49:20.586Z",
               "EditorCaption": ""
@@ -99,33 +99,33 @@
               "RelativeDocumentMoniker": "ConsoleApp18\\Services.cs",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\proj\\ConsoleApp18\\Services.cs",
               "RelativeToolTip": "ConsoleApp18\\Services.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAswGAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAwwAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-15T13:58:48.092Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Repos.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\proj\\ConsoleApp18\\Repos.cs",
               "RelativeDocumentMoniker": "ConsoleApp18\\Repos.cs",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\proj\\ConsoleApp18\\Repos.cs",
               "RelativeToolTip": "ConsoleApp18\\Repos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-29T13:35:10.332Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\proj\\ConsoleApp18\\Program.cs",
               "RelativeDocumentMoniker": "ConsoleApp18\\Program.cs",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\MiniCrm\\proj\\ConsoleApp18\\Program.cs",
               "RelativeToolTip": "ConsoleApp18\\Program.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBYAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-25T13:31:01.693Z",
               "EditorCaption": ""
