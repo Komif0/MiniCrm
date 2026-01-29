@@ -10,9 +10,6 @@ namespace Program
 {
     public class Program
     {
-
-        public static void TestFunc() { }
-
         public static async Task Main(string[] args)
         {
             var crmService = CrmService.Instance;
