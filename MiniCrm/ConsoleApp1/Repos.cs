@@ -61,9 +61,12 @@ public class ClientRepository : BaseRepository<Client>, IClientRepository
 
     public int GetNextId()
     {
-        var lastCl = _items.Cast<Client>().Last();
-        var nextId = lastCl.Id + 1;
-        return nextId;
+        if (_items.Count != 0)
+        {
+            var lastCl = _items.Cast<Client>().Last();
+            return lastCl.Id + 1;
+        }
+        else { return 1; }
     }
 
 }
@@ -78,9 +81,11 @@ public class OrderRepository : BaseRepository<Order>, IOrderRepository
 
     public int GetNextId()
     {
-        var lastOrd = _items.Cast<Order>().Last();
-
-        var nextId = lastOrd.Id + 1; 
-        return nextId;
+        if (_items.Count != 0)
+        {
+            var lastCl = _items.Cast<Client>().Last();
+            return lastCl.Id + 1;
+        }
+        else { return 1; }
     }
 }

@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 1,
+    "Name": "Иван Иванов",
+    "Email": "ivan@example.com",
+    "CreatedAt": "2026-02-05T17:23:49.2980169+03:00"
+  },
+  {
+    "Id": 2,
+    "Name": "Мария Петрова",
+    "Email": "maria@example.com",
+    "CreatedAt": "2026-02-05T17:23:50.0313531+03:00"
+  },
+  {
+    "Id": 3,
+    "Name": "Петр Сидоров",
+    "Email": "petr@example.com",
+    "CreatedAt": "2026-02-05T17:23:50.0443965+03:00"
+  }
+]
