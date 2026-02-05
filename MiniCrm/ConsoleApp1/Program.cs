@@ -1,12 +1,11 @@
 ﻿using Microsoft.VisualBasic;
-using Services;
 using System;
 using System.IO;
 using System.Net;
 using System.Reflection.PortableExecutable;
 using System.Threading.Tasks;
 
-namespace Program
+namespace MiniCrm
 {
     public class Program
     {
@@ -15,9 +14,10 @@ namespace Program
 
         public static async Task Main(string[] args)
         {
+
             var crmService = CrmService.Instance;
             var notifier = new Notifier();
-            var ui = new ConsoleUI(crmService);
+            var ui = new ConsoleUI(crmService, crmService, crmService);
 
             crmService.ClientAdded += notifier.OnClientAdded;
 

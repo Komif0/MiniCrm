@@ -1,6 +1,4 @@
-﻿using static Program.Program;
-
-namespace Services
+﻿namespace MiniCrm
 {
     public class SearchClientsByEmailStrategy : IClientSearchStrategy
     {
@@ -44,7 +42,7 @@ namespace Services
     }
 
 
-    public sealed class CrmService
+    public sealed class CrmService : IClientReader, IClientWriter, IOrderReader
     {
         private readonly IClientRepository _clientRepository;
         private readonly IOrderRepository _orderRepository;
