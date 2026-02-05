@@ -4,6 +4,7 @@ namespace MiniCrm
     public interface IRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
+        Task DeleteAll();
         T? GetById(int id);
         void Add(T entity);
         Task SaveAsync();
@@ -41,6 +42,7 @@ namespace MiniCrm
     public interface IClientWriter
     {
         Client AddClient(string name, string email);
+        Task DeleteAllClients();
     }
 
     public interface IOrderReader

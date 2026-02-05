@@ -63,6 +63,10 @@
             Console.WriteLine("\n\n--- Генерация детального отчета по заказам ---");
             ordersReport.Generate();
 
+            Console.WriteLine("Чтобы удалить все содержимое JSON файла, нажмите любую кнопку");
+            Console.ReadKey();
+            _clientWriter.DeleteAllClients();
+
             Console.ReadLine();
         }
     }

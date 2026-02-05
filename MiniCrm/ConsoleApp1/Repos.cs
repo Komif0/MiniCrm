@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Runtime.CompilerServices;
 using System.Security.Principal;
 
 namespace MiniCrm
@@ -49,6 +50,11 @@ namespace MiniCrm
         public void Add(T entity) => _items.Add(entity);
         public IEnumerable<T> GetAll() => _items;
         public abstract T GetById(int id);
+        public async Task DeleteAll()
+        {
+            _items.Clear();
+            await SaveAsync();
+        }
 
     }
 

@@ -1,4 +1,6 @@
-﻿namespace MiniCrm
+﻿using System.Diagnostics.Metrics;
+
+namespace MiniCrm
 {
     public class SearchClientsByEmailStrategy : IClientSearchStrategy
     {
@@ -86,6 +88,8 @@
             return client;
         }
 
+        public async Task DeleteAllClients() => await _clientRepository.DeleteAll();
+        public async Task DeleteAllOrders() => await _orderRepository.DeleteAll();
         public IEnumerable<Client> GetAllClients() => _clientRepository.GetAll();
 
         public IEnumerable<Client> FindClients(IClientSearchStrategy strategy)
