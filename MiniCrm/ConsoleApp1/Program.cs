@@ -12,7 +12,7 @@ namespace MiniCrm
 
         public static void TestFunc() { }
 
-        public static async Task Main(string[] args)
+        public static void Main(string[] args)
         {
 
             var crmService = CrmService.Instance;
@@ -21,9 +21,13 @@ namespace MiniCrm
 
             crmService.ClientAdded += notifier.OnClientAdded;
 
-            ui.Run();
+            ReportGeneratorFactory clientReportFactory = new ClientListReportFactory();
+            ReportGeneratorFactory ordersReportFactory = new ClientOrdersReportFactory();
 
-            //Добавлямс коммит
+            BaseReportGenerator clientReport = clientReportFactory.CreateGenerator(crmService, crmService);
+            BaseReportGenerator ordersReport = ordersReportFactory.CreateGenerator(crmService, crmService);
+
+            ui.Run();
         }
 
     }

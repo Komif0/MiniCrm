@@ -6,6 +6,29 @@ using System.Threading.Tasks;
 
 namespace MiniCrm
 {
+    public abstract class ReportGeneratorFactory
+    {
+        // Фабричный метод
+        public abstract BaseReportGenerator CreateGenerator(IClientReader clientReader, IOrderReader orderReader);
+    }
+
+    public class ClientListReportFactory : ReportGeneratorFactory
+    {
+        public override BaseReportGenerator CreateGenerator(IClientReader clientReader, IOrderReader orderReader)
+        {
+            return new ClientListReport(clientReader, orderReader);
+        }
+    }
+
+    public class ClientOrdersReportFactory : ReportGeneratorFactory
+    {
+        public override BaseReportGenerator CreateGenerator(IClientReader clientReader, IOrderReader orderReader)
+        {
+            return new ClientOrdersReport(clientReader, orderReader);
+        }
+    }
+
+
     public abstract class BaseReportGenerator
     {
         protected readonly IClientReader _clientReader;
