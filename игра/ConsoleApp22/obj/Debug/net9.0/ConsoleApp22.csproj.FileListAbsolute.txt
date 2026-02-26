@@ -1,0 +1,14 @@
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\bin\Debug\net9.0\ConsoleApp22.exe
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\bin\Debug\net9.0\ConsoleApp22.deps.json
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\bin\Debug\net9.0\ConsoleApp22.runtimeconfig.json
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\bin\Debug\net9.0\ConsoleApp22.dll
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\bin\Debug\net9.0\ConsoleApp22.pdb
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\obj\Debug\net9.0\ConsoleApp22.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\obj\Debug\net9.0\ConsoleApp22.AssemblyInfoInputs.cache
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\obj\Debug\net9.0\ConsoleApp22.AssemblyInfo.cs
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\obj\Debug\net9.0\ConsoleApp22.csproj.CoreCompileInputs.cache
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\obj\Debug\net9.0\ConsoleApp22.dll
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\obj\Debug\net9.0\refint\ConsoleApp22.dll
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\obj\Debug\net9.0\ConsoleApp22.pdb
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\obj\Debug\net9.0\ConsoleApp22.genruntimeconfig.cache
+C:\Users\в.банира\source\repos\ConsoleApp22\ConsoleApp22\obj\Debug\net9.0\ref\ConsoleApp22.dll
